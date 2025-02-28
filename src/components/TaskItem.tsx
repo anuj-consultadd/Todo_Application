@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Task } from '../interfaces';
 
@@ -83,10 +82,12 @@ const TaskItem: React.FC<TaskItemProps> = ({
                 </svg>
               )}
             </button>
+
             <span
-              className={`text-lg ${
+              className={`text-lg max-w-[16rem] overflow-hidden truncate ${
                 task.completed ? 'text-gray-500 line-through' : 'text-white'
               }`}
+              title={task.text} 
             >
               {task.text}
             </span>

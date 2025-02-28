@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 interface TaskFormProps {
@@ -28,7 +27,12 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask }) => {
         />
         <button
           type="submit"
-          className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          disabled={!newTask.trim()} 
+          className={`px-4 py-2 rounded-lg focus:outline-none focus:ring-2 
+            ${newTask.trim() 
+              ? 'bg-indigo-600 text-white hover:bg-indigo-700 focus:ring-indigo-500'
+              : 'bg-gray-500 text-gray-300 cursor-not-allowed' 
+            }`}
         >
           Add
         </button>
